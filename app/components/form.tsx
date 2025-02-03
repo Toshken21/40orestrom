@@ -284,7 +284,7 @@ export default function Form() {
     <div className="bg-green-50 min-h-screen">
       <div className="flex items-center justify-center">
         <div className="flex flex-col space-y-4 mt-[70px]">
-          <label className="text-[20px] text-green-800 font-semibold">Årlig strømforbruk(kwh):</label>
+          <label className="text-[20px] text-green-800 font-semibold">Årlig strømforbruk i 2024(kwh):</label>
           <input 
             className="border border-green-600 rounded text-green-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" 
             onChange={handleElectricityConsumption} 
