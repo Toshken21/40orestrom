@@ -17,7 +17,7 @@ const fixPriceValues = (priceArray: number[], electricityZone: string) => {
     return priceArray.map((arrayItem: number) => {
         if (arrayItem > 0.75) {
             const subsidizedPower = arrayItem - 0.75;
-            let newArrayItem = arrayItem - subsidizedPower * 0.9;
+            const newArrayItem = arrayItem - subsidizedPower * 0.9;
 
             if (electricityZone !== "N04") {
                 return newArrayItem + newArrayItem * 0.25;
@@ -60,7 +60,7 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
 
 
   const calculateYearlyCost = ({priceArray, hourlyConsumption} : {priceArray: number[]; hourlyConsumption: number }) => {
-    let totalPrice = 0
+
     const hourCostArray = []
 
     
