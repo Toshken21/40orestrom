@@ -192,7 +192,7 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
     let totalPrice = 0;
     let totalSubsidizedPrice = 0;
     let totalSavedPrize = 0
-    let comparizonArray = []
+    const comparizonArray = []
     console.log(yearlySubsidizedConsumption[0].length, "length of yearly subsidized consumption array");
     for ( let k = 0; k < yearlySubsidizedConsumption[0].length; k++) {
       console.log(`Iteration ${k}:`);
