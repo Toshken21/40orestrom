@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from 'react';
 import {
   LineChart,
@@ -14,13 +12,15 @@ import {
 
 const PriceComparisonChart = ({  normalWeeklyPrices, subsidizedWeeklyPrices }: {
 
-    normalWeeklyPrices: number[];
-    subsidizedWeeklyPrices: number[];
-}) => {
+  normalWeeklyPrices: number[];
+  subsidizedWeeklyPrices: number[];
+})  => {
   const [xAxisInterval, setXAxisInterval] = useState(3);
+  const [windowWidth, setWindowWidth] = useState(1024); // default fallback
 
   useEffect(() => {
     const handleResize = () => {
+      setWindowWidth(window.innerWidth);
       if (window.innerWidth < 480) {
         setXAxisInterval(12); // Show every 12th week on mobile
       } else if (window.innerWidth < 768) {
@@ -39,6 +39,9 @@ const PriceComparisonChart = ({  normalWeeklyPrices, subsidizedWeeklyPrices }: {
     // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const angleValue = windowWidth < 768 ? -45 : 0;
+  const textAnchorValue = windowWidth < 768 ? "end" : "middle";
 
   const weeklyData = Array.from({ length: 52 }, (_, index) => ({
     week: `Uke ${index + 1}`,
@@ -67,8 +70,8 @@ const PriceComparisonChart = ({  normalWeeklyPrices, subsidizedWeeklyPrices }: {
               dataKey="week"
               tick={{ fill: '#166534', fontSize: '12px' }}
               interval={xAxisInterval}
-              angle={window.innerWidth < 768 ? -45 : 0}
-              textAnchor={window.innerWidth < 768 ? "end" : "middle"}
+              angle={angleValue}
+              textAnchor={textAnchorValue}
               height={60}
             />
             <YAxis
