@@ -299,11 +299,11 @@ export default function Form() {
             value={electricityZone} 
             onChange={handleElectricityZone}
           >
-            <option value={"NO1"}>NO1</option>
-            <option value={"NO2"}>NO2</option>
-            <option value={"NO3"}>NO3</option>
-            <option value={"NO4"}>NO4</option>
-            <option value={"NO5"}>NO5</option>
+            <option value={"NO1"}>NO1 (Øst-Norge)</option>
+            <option value={"NO2"}>NO2 (Sør-Norge)</option>
+            <option value={"NO3"}>NO3 (Midt-Norge)</option>
+            <option value={"NO4"}>NO4 (Nord-Norge)</option>
+            <option value={"NO5"}>NO5 (Vest-Norge)</option>
           </select>
           
           <button 
