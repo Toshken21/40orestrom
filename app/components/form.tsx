@@ -38,7 +38,7 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
   return priceArray.map((arrayItem: number) => {
       if (arrayItem > 0.75) {
           
-          let newArrayItem = arrayItem;
+          const newArrayItem = arrayItem;
 
           if (electricityZone !== "N04") {
               return newArrayItem + newArrayItem * 0.25;
@@ -118,7 +118,7 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
   // This currently has priceArray for no reason and needs to get refactored
 
   const calculateSubsidizedYearlyCost = ({priceArray, hourlyConsumption} : {priceArray: number[]; hourlyConsumption: number }) => {
-    let totalPrice = 0
+    
     const hourCostArray = []
 
     
@@ -246,7 +246,7 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
 
 export default function Form() {
   const [electrityConsumption, setElectricityConsumption] = useState(0);
-  const [buildingType, setBuildingType] = useState(180);
+
   const [electricityZone, setElectrictyZone] = useState("NO1");
   const [resultsArray, setResultsArray] = useState<ResultsType>([[], [], 0, 0, 0, [], []]);
 
@@ -254,9 +254,7 @@ export default function Form() {
     setElectricityConsumption(Number(e.target.value));
   };
 
-  const handleBuildingType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setBuildingType(Number(e.target.value));
-  };
+
 
   const handleElectricityZone = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setElectrictyZone(e.target.value);
