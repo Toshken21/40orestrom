@@ -286,7 +286,7 @@ export default function Form() {
         <div className="flex flex-col space-y-4 mt-[70px]">
           <label className="text-[20px] text-green-800 font-semibold">Årlig strømforbruk(kwh):</label>
           <input 
-            className="border border-green-600 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" 
+            className="border border-green-600 rounded text-green-700 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" 
             onChange={handleElectricityConsumption} 
             type="number" 
           />
@@ -295,7 +295,7 @@ export default function Form() {
           
           <label className="text-[20px] text-green-800 font-semibold">Strømsone:</label>
           <select 
-            className="text-[20px] border border-green-600 rounded px-4 py-2 w-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-green-400" 
+            className="text-[20px] border border-green-600 rounded px-4 py-2 text-green-700 w-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-green-400" 
             value={electricityZone} 
             onChange={handleElectricityZone}
           >
@@ -346,7 +346,7 @@ export default function Form() {
     Tallene vi brukte i beregningen
   </h2>
   <p className="text-green-700 text-[16px] md:text-[20px] mx-4 md:ml-[10%]">
-    Vi hentet strømprisdata fra <a href="https://www.hvakosterstrommen.no/strompris-api">hvakosterstrommen.no</a> og arealforbruket fra <a href="https://www.ssb.no/energi-og-industri/energi/artikler/hva-er-gjennomsnittlig-stromforbruk-i-husholdningene">Statistiske sentralbyrå</a>
+    Vi hentet strømprisdata fra <a href="https://www.hvakosterstrommen.no/strompris-api">hvakosterstrommen.no</a>
   </p>
   <p className="text-green-700 text-[16px] md:text-[20px] mx-4 md:ml-[10%] mt-4">
     Vi har inkludert MVA og den nye nettleiesatsen på 15% i beregningene, men ikke påslag på grunn av manglende informasjon rundt implementeringen av strømforslaget
@@ -361,15 +361,7 @@ export default function Form() {
     Hvis du ønsker å kontakte oss, send gjerne mail til <span className="border-b-solid border-b-2 border-white-600">anton.rader@gmail.com</span>
   </p>
   
-  <div className="pb-[30px] flex flex-col md:flex-row items-center gap-4 md:gap-0 w-[90%] md:w-[80%] mx-auto md:ml-[10%] pt-[30px]">
-    <h2 className="text-[16px] md:text-[20px] mr-0 md:mr-[10px]">Meld deg på vårt nyhetsbrev her:</h2>
-    <div className="flex w-full md:w-auto gap-2">
-      <input 
-        className="flex-1 md:flex-none border-0 border-b-2 border-white-600 bg-transparent focus:outline-none focus:border-white-800 w-full md:w-[200px]"
-      />
-      <button className="bg-white text-black px-4 py-1 rounded whitespace-nowrap">Send inn</button>
-    </div>
-  </div>
+  
 </div>
       </div>
     </div>
