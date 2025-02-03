@@ -357,7 +357,7 @@ export default function Form() {
   <p className="text-[16px] md:text-[20px] w-[90%] md:w-[80%] mx-auto md:ml-[10%]">
     Vi er en norsk startup som heter PowerSync og vi bygger KI modeller for å gjøre det lettere for bedrifter å forutsi strømforbruk over lengre tid.
   </p>
-  <p className="text-[16px] md:text-[20px] w-[90%] md:w-[80%] mx-auto md:ml-[10%] mt-4">
+  <p className="text-[16px] md:text-[20px] w-[90%] md:w-[80%] pb-[40px] mx-auto md:ml-[10%] mt-4">
     Hvis du ønsker å kontakte oss, send gjerne mail til <span className="border-b-solid border-b-2 border-white-600">anton.rader@gmail.com</span>
   </p>
   
