@@ -30,7 +30,7 @@ export default function Home() {
           Er regjeringens forslag for 40 øre/kwh gunstig for deg?
         </h2>
         <h2 className="text-[24px] font-bold text-center mt-[30px] text-green-800">
-          Prisene er inkludert mva i alle regioner utenom N04
+          Prisene er inkludert mva i alle regioner utenom N04 og ny nettleie på 15%. Påslag er ikke innbakt i prisene.
         </h2>
 
         <Form />
