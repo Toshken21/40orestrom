@@ -29,6 +29,10 @@ export default function Home() {
         <h2 className="text-[24px] font-bold text-center mt-[30px] text-green-800">
           Er regjeringens forslag for 40 øre/kwh gunstig for deg?
         </h2>
+        <h2 className="text-[24px] font-bold text-center mt-[30px] text-green-800">
+          Prisene er inkludert mva i alle regioner utenom N04
+        </h2>
+
         <Form />
       </div>
     </>

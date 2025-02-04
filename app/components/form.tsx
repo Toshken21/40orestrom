@@ -90,6 +90,13 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
         totalMonthlyCost += hourCostArray[j];
       }
       hourCount += hoursInMonthArray[i];
+      if(i == 0 || i == 1 || i == 10 || i == 11) {
+        //if winter months increase consumption by 50% 
+        
+        totalMonthlyCost = totalMonthlyCost * 1.286
+      } else {
+        totalMonthlyCost = totalMonthlyCost * 0.857
+      }
       monthCostArray.push(totalMonthlyCost);
 
     } 
@@ -102,6 +109,12 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
       let totalWeeklyCost = 0;
       for (let g = weeklyHourCount; g < weeklyHourCount + 168; g++) {
         totalWeeklyCost += hourCostArray[g];
+      }
+
+      if (b < 8 || b > 42) {
+        totalWeeklyCost = totalWeeklyCost * 1.286
+      } else {
+        totalWeeklyCost = totalWeeklyCost * 0.857
       }
       weeklyHourCount += 168
       weeklyCostArray.push(totalWeeklyCost);
@@ -147,6 +160,13 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
         totalMonthlyCost += hourCostArray[j];
       }
       hourCount += hoursInMonthArray[i];
+      if(i == 0 || i == 1 || i == 10 || i == 11) {
+        //if winter months increase consumption by 50% 
+        
+        totalMonthlyCost = totalMonthlyCost * 1.286
+      } else {
+        totalMonthlyCost = totalMonthlyCost * 0.857
+      }
       monthCostArray.push(totalMonthlyCost);
       console.log(totalMonthlyCost);
 
@@ -159,6 +179,12 @@ const fixOriginalPriceValues = (priceArray: number[], electricityZone: string) =
       let totalWeeklyCost = 0;
       for (let g = weeklyHourCount; g < weeklyHourCount + 168; g++) {
         totalWeeklyCost += hourCostArray[g];
+      }
+
+      if (b < 8 || b > 42) {
+        totalWeeklyCost = totalWeeklyCost * 1.286
+      } else {
+        totalWeeklyCost = totalWeeklyCost * 0.857
       }
       weeklyHourCount += 168
       weeklyCostArray.push(totalWeeklyCost);
@@ -349,8 +375,11 @@ export default function Form() {
     Vi hentet strømprisdata fra <a href="https://www.hvakosterstrommen.no/strompris-api">hvakosterstrommen.no</a>
   </p>
   <p className="text-green-700 text-[16px] md:text-[20px] mx-4 md:ml-[10%] mt-4">
-    Vi har inkludert MVA og den nye nettleiesatsen på 15% i beregningene, men ikke påslag på grunn av manglende informasjon rundt implementeringen av strømforslaget
+    Vi har inkludert MVA og den nye nettleiesatsen på 15% i beregningene, men ikke påslag på grunn av manglende informasjon rundt implementeringen av strømforslaget.
+
   </p>
+  <p className="text-green-700 text-[16px] md:text-[20px] mx-4 md:ml-[10%] mt-4">Vi har modellert forbrukskurven slik at forbruker er 50% større i januar, februar, november og desember sammenlignet med andre måneder.</p>
+  <p className="text-green-700 text-[16px] md:text-[20px] mx-4 md:ml-[10%] mt-4">Dette er for å simulere økt forbruk pga av oppvarming av bolig.</p>
 </div>
 <div className="bg-emerald-950 mt-[50px] px-4 md:px-0">
   <h2 className="text-center text-[24px] md:text-[30px] pt-[20px]">Hvem er vi?</h2>
